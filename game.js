@@ -10,29 +10,27 @@ function nextSequence() {
   gamePattern.push(randomChosenColour);
   $("#" + randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 
-  switch (randomChosenColour) {
-    case "red":
-      let audio1 = new Audio('sounds/red.mp3');
-      audio1.play();
-      break;
-    case "blue":
-      let audio2 = new Audio('sounds/blue.mp3');
-      audio2.play();
-      break;
-    case "green":
-      let audio3 = new Audio('sounds/green.mp3');
-      audio3.play();
-      break;
-    case "yellow":
-      let audio4 = new Audio('sounds/yellow.mp3');
-      audio4.play();
-      break;
-    default:
-  }
+  var colour = new Audio ("sounds/" + randomChosenColour + ".mp3");
+  colour.play();
+}
 
-  $("btn").click(function(){
-    let userChosenColour = "#" + this.innerHTML;
-    userClickedPattern.push(userChosenColour);
+  $(".btn").click(function () {
+    let userChosenColor = this.id;
+    userClickedPattern.push(userChosenColor);
+    console.log(userChosenColor);
+    playSound(userChosenColor);
+    animatePress(userChosenColor);
   });
 
+function playSound(name) {
+  $("#" + name);
+    var colour = new Audio("sounds/" + name + ".mp3");
+    colour.play();
+}
+
+function animatePress(currentColor) {
+  let activeBottom = $(".btn" + "." + currentColor).addClass("pressed");
+    setTimeout(function(){
+      activeBottom.removeClass("pressed");
+    },100);
 }
