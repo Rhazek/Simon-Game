@@ -1,6 +1,9 @@
 ## Simon Game
-<!-- <img src="" align="center" />
- -->
+
+<div align="center">
+<img height="400px" src="https://user-images.githubusercontent.com/50714597/159590767-7aef7042-5657-4e0d-97bc-ae6ca41ab23c.gif" align="center" />
+</div>
+
 &nbsp;
 
 ## Tecnologias/Ferramentas utilizadas
