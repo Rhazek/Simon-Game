@@ -57,16 +57,13 @@ function animatePress(currentColor) {
 
 function checkAnswer(currentLevel) {
   if (userClickedPattern[currentLevel] == gamePattern[currentLevel]) {
-    console.log(userClickedPattern[currentLevel]);
-    console.log(gamePattern[currentLevel]);
     var count = 0;
     for (var i = 0; i < gamePattern.length; i++) {
       if (gamePattern[i] === userClickedPattern[i]) {
         count++;
       }
     }
-
-
+    
     if (count === gamePattern.length) {
       console.log("success");
       setTimeout(function() {
